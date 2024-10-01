@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float speed = 5.0f;
+    public BulletManager bulletManager;
 
     private void Start()
     {
@@ -23,7 +24,13 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetButton("Fire1"))
         {
-           Debug.Log("Fire key is pressed");
+            FireBullet();
         }
+    }
+
+    [ContextMenu("Fire Bullet")]
+    void FireBullet()
+    {
+        bulletManager.FireBullet(transform.position, Vector3.up);
     }
 }
