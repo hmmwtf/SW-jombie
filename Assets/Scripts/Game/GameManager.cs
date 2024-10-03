@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    // Singleton pattern »ç¿ë
+
     private static GameManager instance;
     public static GameManager Instance
     {
@@ -29,4 +31,6 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public GunType currentGunType;
 }

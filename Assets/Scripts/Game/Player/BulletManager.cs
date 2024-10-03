@@ -9,8 +9,6 @@ public class BulletManager : MonoBehaviour
     private Bullet[] bullets;
     int idx = 0;
 
-    public float bulletSpeed = 5.0f;
-
     private void Start()
     {
         bullets = new Bullet[10];
@@ -30,7 +28,9 @@ public class BulletManager : MonoBehaviour
             idx = 0;
         }
 
+        start.z = 0;
+
         bul.gameObject.SetActive(true);
-        bul.Fire(start, bulletSpeed, dir);
+        bul.Fire(start, dir);
     }
 }
